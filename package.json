@@ -1,0 +1,24 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusTRibeiro/expressHW"
+  },
+  "author": "Matheus Ribeiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusTRibeiro/expressHW"
+  },
+  "homepage": "https://github.com/MatheusTRibeiro/expressHW/",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}

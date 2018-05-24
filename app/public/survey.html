@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Friend-Finder</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+	<script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+			<h1>Survey Questions</h1>
+			<hr>
+			<label for="Name">Name (Required)</label>
+			<input type="text" class="form-control" id="Name" required>
+			
+			<label for="Picture">Link to Picture (Required)</label>
+		    <input type="text" class="form-control" id="Picture" required>
+			
+			<h3>Question 1</h3>
+			<p>Your mind is always buzzing with unexplored ideas and plans.</p>
+			
+			<select id="q1">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 2</h3>
+			<p>Generally speaking, you rely more on your experience than your imagination.</p>
+			<select id="q2">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 3</h3>
+			<p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
+			<select id="q3">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 4</h3>
+			<p>You rarely do something just out of sheer curiosity.</p>
+			<select id="question4">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 5</h3>
+			<p>People can rarely upset you.</p>
+			<select id="q5">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 6</h3>
+			<p>It is often difficult for you to relate to other people’s feelings.</p>
+			<select id="q6">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 7</h3>
+			<p>In a discussion, truth should be more important than people’s sensitivities.</p>
+			<select id="question7">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 8</h3>
+			<p>You rarely get carried away by fantasies and ideas.</p>
+			<select id="q8">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 9</h3>
+			<p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
+			<select id="q9">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<h3>Question 10</h3>
+			<p>You feel more energetic after spending time with a group of people.</p>
+			<select id="q10">
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select>
+			<hr>
+			<br>
+			
+			<button type="submit" id="submitButton" class="btn btn-primary btn-lg btn-block">Submit</button>
+		</div>
+
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Your Best Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchName"></h2>
+                    <img id="matchImg" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    	$("#submitButton").on("click", function(event){
+    		event.preventDefault();
+    		var newUser = {
+    			name: $("#Name").val().trim(),
+    			picture: $("#Picture").val().trim(),
+    			score: [
+    				$("#q1").val(),
+    				$("#q2").val(),
+    				$("#q3").val(),
+    				$("#q4").val(),
+    				$("#q5").val(),
+    				$("#q6").val(),
+    				$("#q7").val(),
+    				$("#q8").val(),
+    				$("#q9").val(),
+    				$("#q10").val()
+    			]
+    		}
+
+    		$.post("/api/friends", newUser, function(data){
+    			$("#matchName").text(data.name);
+    			$("#matchImg").attr("src", data.picture);
+    			$('#modal').modal("toggle");
+    		})
+    	})
+    	
+    </script>
+</body>
+</html>
